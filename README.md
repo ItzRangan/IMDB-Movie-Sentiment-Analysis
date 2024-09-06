@@ -16,14 +16,6 @@ IMDb lets users rate movies on a scale from 1 to 10. To label these reviews the 
 **Step 1: Download and Combine Movie Reviews**
 We will go to IMDb Reviews and click on “Large Movie Review Dataset v1.0”. Once that is complete we willll have a file called aclImdb_v1.tar.gz in our downloads folder.
 
-Unpacking and Merging
-Follow these steps or run the shell script here: Preprocessing Script
-
-1. Move the tar file to the directory where you want this data to be stored.
-2. Open a terminal window and cd to the directory that you put aclImdb_v1.tar.gz in.
-3. gunzip -c aclImdb_v1.tar.gz | tar xopf -
-4. cd aclImdb && mkdir movie_data
-5. for split in train test; do for sentiment in pos neg; do for file in $split/$sentiment/*; do cat $file >>  movie_data/full_${split}.txt; echo >> movie_data/full_${split}.txt; done; done; done;
 **Step 2: Read into Python**
 For most of what we want to do in this project we’ll only need our reviews to be in a Python list. We have to make sure to point open to the directory where we put the movie data.
 
